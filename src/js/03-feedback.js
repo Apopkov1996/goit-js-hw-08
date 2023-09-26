@@ -21,17 +21,23 @@ function onDataInput(e) {
 }
 
 function onFormSubmit (e) {
-  e.preventDefault();
-  console.log(data);
-  e.target.reset();
-  localStorage.removeItem(key);
-  data = {};
+    e.preventDefault();
+
+    if (refs.inputNameEl.value === '' || refs.inputMessageEl.value === '') {
+        alert(`Please fill all fields`)
+    } else {
+        console.log(data);
+    };
+
+    e.target.reset();
+    localStorage.removeItem(key);
+    data = {};
+    
 };
 
 
 function restorPage() {
   data = JSON.parse(localStorage.getItem(key)) || {};
-  console.log(data);
   
   refs.inputNameEl.value = data.email || '';
   refs.inputMessageEl.value = data.message || '';
