@@ -21,17 +21,16 @@ function onDataInput(e) {
 }
 
 function onFormSubmit (e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (refs.inputNameEl.value === '' || refs.inputMessageEl.value === '') {
+  if (refs.inputNameEl.value === '' || refs.inputMessageEl.value === '') {
         alert(`Please fill all fields`)
-    } else {
-        console.log(data);
-    };
-
-    e.target.reset();
-    localStorage.removeItem(key);
-    data = {};
+  };
+    
+  console.log(data);
+  e.target.reset();
+  localStorage.removeItem(key);
+  data = {};
     
 };
 
